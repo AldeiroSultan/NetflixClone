@@ -1,0 +1,244 @@
+<!-- Place this file in the root directory of your project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story - Home</title>
+    <script src="https://kit.fontawesome.com/c8451551fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="background">
+        <header>
+            <nav role="navigation">
+                <span class="primary-menu--logo" data-logo="Our Love Story Logo"><a href="#"></a></span>
+                <ul class="primary-menu--list">
+                    <li class="primary-menu--item"><a href="#">Home</a></li>
+                    <li class="primary-menu--item"><a href="#">Our Movies</a></li>
+                    <li class="primary-menu--item"><a href="#" id="memories-nav">Memories</a></li>
+                    <li class="primary-menu--item"><a href="#">Trending</a></li>
+                    <li class="primary-menu--item"><a href="#">Our Moments</a></li>
+                </ul>
+                <ul class="secondary-menu--list">
+                    <li class="secondary-menu--item"><a href="#"><i class="fa-solid fa-search"></i></a></li>
+                    <li class="secondary-menu--item"><a href="#"><i class="fa-solid fa-bell"></i></a></li>
+                    <li class="secondary-menu--item user">
+                        <span class="secondary-menu--user-icon" data-user="User's icon"><a href="user.html"></a></span>
+                        <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div role="banner" class="hero">
+                <!-- Preview video - use a placeholder here -->
+                <div class="preview-video-container">
+                    <video class="preview-video" autoplay muted loop>
+                        <!-- Placeholder video - replace with your own -->
+                        <source src="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4" type="video/mp4">
+                    </video>
+                    <div class="preview-overlay"></div>
+                </div>
+                <img class="hero--logo" src="https://github.com/debschaan/netflix-clone/blob/main/assets/img/poster%201.png?raw=true" alt="Our Love Story">
+                <p class="hero--description">A journey through our most cherished moments together. Relive the laughter, adventures, and beautiful memories we've created together.</p>
+                <button class="hero--button play" id="watch-button"><i class="fa-solid fa-play"></i>Watch Now</button>
+                <button class="hero--button info"><i class="fa-solid fa-circle-info"></i>More Information</button>
+                <div class="video-controls">
+                    <button id="toggle-mute" class="video-control-button">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h1 class="visually-hidden">Our Memories</h1>
+
+            <section class="section__category">
+                <h3 class="category--title"><a href="#">Our Favorite Moments</a></h3>
+                <div class="category--carousel">
+                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
+                    <div class="carousel__container">
+                        <ul class="carousel--list">
+                            <!-- Updated placeholder images -->
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="First Date"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Road Trip"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Beach Day"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Anniversary"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Concert Night"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Dinner Date"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Holiday"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
+                </div>
+            </section>
+
+            <section class="section__category">
+                <h3 class="category--title"><a href="#">Our Adventures</a></h3>
+                <div class="category--carousel">
+                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
+                    <div class="carousel__container">
+                        <ul class="carousel--list">
+                            <!-- Updated placeholder images -->
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Hiking Trip"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="City Exploration"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Road Trip"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Theme Park"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Beach Adventure"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Camping"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Winter Getaway"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
+                </div>
+            </section>
+
+            <section class="section__category">
+                <h3 class="category--title"><a href="#">Special Events</a></h3>
+                <div class="category--carousel">
+                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
+                    <div class="carousel__container">
+                        <ul class="carousel--list">
+                            <!-- Updated placeholder images -->
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Birthday Party"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Holiday Celebration"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Friend's Wedding"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Family Gathering"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Concert"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="New Year's Eve"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Valentine's Day"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
+                </div>
+            </section>
+
+            <section class="section__category">
+                <h3 class="category--title"><a href="#">Memorable Moments</a></h3>
+                <div class="category--carousel">
+                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
+                    <div class="carousel__container">
+                        <ul class="carousel--list">
+                            <!-- Updated placeholder images -->
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="First Kiss"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Proposal"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Moving In"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="First Trip"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Meeting Parents"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Anniversary"></a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
+                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Surprise Gift"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
+                </div>
+            </section>
+            
+            <!-- Looking for something button -->
+            <div class="find-more-container">
+                <button id="find-more-button" class="find-more-button">
+                    <i class="fa-solid fa-search"></i> Couldn't find what you're looking for?
+                </button>
+            </div>
+        </main>
+        <footer role="contentinfo">
+            <ul class="social--list">
+                <li class="social--item"><a aria-label="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+                <li class="social--item"><a aria-label="instagram" href="#"><i class="bi bi-instagram"></i></a></li>
+                <li class="social--item"><a aria-label="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+                <li class="social--item"><a aria-label="youtube" href="#"><i class="bi bi-youtube"></i></a></li>
+            </ul>
+            <div class="options">
+                <ul class="options--list">
+                    <li class="options--item"><a href="#">First Date</a></li>
+                    <li class="options--item"><a href="#">How We Met</a></li>
+                    <li class="options--item"><a href="#">Our Trips</a></li>
+                    <li class="options--item"><a href="#">Anniversary Memories</a></li>
+                    <li class="options--item"><a href="#">Special Moments</a></li>
+                    <li class="options--item"><a href="#">Inside Jokes</a></li>
+                    <li class="options--item"><a href="#">Cute Photos</a></li>
+                    <li class="options--item"><a href="#">Favorite Songs</a></li>
+                    <li class="options--item"><a href="#">Our Adventures</a></li>
+                    <li class="options--item"><a href="#">Date Nights</a></li>
+                    <li class="options--item"><a href="#">Couple Goals</a></li>
+                    <li class="options--item"><a href="#">Contacts</a></li>
+                    <li class="options--item"><a href="#">Our Future</a></li>
+                </ul>
+            </div>
+            <button class="service-code-button">Love Code</button>
+            <div class="footer-copyright"><span>© 2024 Our Love Story</span></div>
+        </footer>
+    </div>
+    
+    <!-- Modal popup -->
+    <div id="findMoreModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Couldn't find what you're looking for?</h2>
+            <p>Check out our special collection of memories just for you!</p>
+            <button id="go-to-carousel-btn" class="hero--button play"><i class="fa-solid fa-heart"></i>Go to Our Special Memories</button>
+        </div>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

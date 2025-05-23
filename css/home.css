@@ -1,0 +1,576 @@
+/* Place this file in a css folder in your project root */
+
+/* RESET CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* END OF RESET CSS */
+
+/* STYLES */
+:root {
+    --black-background: rgb(20, 20, 20);
+    --gray: #808080;
+    --white: white;
+    --white-btn-hover: rgba(255, 255, 255, 0.777);
+    --black-btn: rgba(0, 0, 0, 0.382);
+    --black-btn-hover: rgba(0, 0, 0, 0.8);
+    --gray-btn: rgba(120, 120, 120, 0.6);
+    --gray-btn-hover: rgba(109, 109, 110, 0.525);
+    --netflix-red: #e50914;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--black-background);
+}
+
+.background {
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+}
+
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56.25vw; /* 16:9 aspect ratio for the hero section */
+    background-image: linear-gradient(
+        to bottom,
+        rgba(20, 20, 20, 0.9) 0%,
+        rgba(20, 20, 20, 0.6) 20%,
+        rgba(20, 20, 20, 0.4) 50%,
+        rgba(20, 20, 20, 0.8) 80%,
+        rgba(20, 20, 20, 1) 100%
+    ),
+    url('https://dinsos.palembang.go.id/assets/img/no-image.png'); /* Updated background to use placeholder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.visually-hidden {
+    clip: rect(1px 1px 1px 1px) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+}
+
+/* NAVIGATION */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.5s ease;
+    z-index: 10;
+}
+
+.scrolled {
+    background-color: var(--black-background);
+    z-index: 2;
+}
+
+/* PRIMARY NAVIGATION */
+.primary-menu--logo{
+    background-image: url(https://raw.githubusercontent.com/debschaan/netflix-clone/37669424c8c0173f10c1f3cd619d49d21e2bfb6b/assets/img/Vector__3_.svg);
+    background-repeat: no-repeat;
+    width: 7rem;
+    height: 2rem;
+    background-size: contain;
+    cursor: pointer;
+    position: relative;
+    left: 4rem;
+}
+
+.primary-menu--list{
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    left: 13rem;
+}
+
+.primary-menu--item a {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.primary-menu--item a:hover{
+    color: var(--gray);
+}
+
+/* SECONDARY NAVIGATION */
+.secondary-menu--list {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    right: 4rem;
+}
+
+.secondary-menu--item{
+   display: flex;
+   align-items: center;
+   gap: .5rem;
+}
+
+.secondary-menu--item a{
+    color: white;
+    font-size: 1.3rem;
+}
+
+.secondary-menu--user-icon {
+    background-image: url("https://github.com/debschaan/netflix-clone/blob/main/assets/img/user%201.png?raw=true");
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 4rem;
+    position: relative;
+    padding-top: 7rem;
+    z-index: 1;
+    height: 40vw;
+    max-height: 70vh;
+    min-height: 500px;
+}
+
+.preview-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    max-height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.preview-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(20, 20, 20, 0.95) 0%,
+        rgba(20, 20, 20, 0.75) 30%,
+        rgba(20, 20, 20, 0.5) 50%,
+        rgba(20, 20, 20, 0.3) 75%,
+        rgba(20, 20, 20, 0.3) 100%
+    );
+    background-image: linear-gradient(
+        to bottom,
+        rgba(20, 20, 20, 0.95) 0%,
+        rgba(20, 20, 20, 0.5) 60%,
+        rgba(20, 20, 20, 0.8) 80%,
+        rgba(20, 20, 20, 1) 100%
+    );
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 35%;
+    right: 5%;
+    z-index: 3;
+}
+
+.video-control-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-control-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.video-control-button i {
+    font-size: 16px;
+    color: white;
+}
+
+.hero--logo {
+    width: 40rem;
+    margin-bottom: 1rem;
+    max-width: 50%;
+    z-index: 2;
+    position: relative;
+}
+
+.hero--description {
+    width: 40rem;
+    max-width: 50%;
+    font-weight: 400;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    z-index: 2;
+    position: relative;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* MAIN SECTION - FIXED FOR PROPER CAROUSEL DISPLAY */
+main {
+    padding: 0 4rem;
+    position: relative;
+    z-index: 1;
+    background-color: var(--black-background);
+    margin-top: -100px; /* Overlap with hero section */
+    padding-top: 100px;
+}
+
+.section__category {
+    margin-bottom: 3rem; /* Increased spacing between sections */
+    position: relative;
+}
+
+.category--title{
+    margin-bottom: 1rem;
+    position: relative; /* Changed from absolute to relative */
+    z-index: 2;
+}
+
+.category--title a{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.category--title a:hover{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.category--carousel{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 1rem; /* Add margin to ensure proper spacing */
+}
+
+.carousel__container {
+    flex: 1;
+    overflow: hidden;
+    margin: 0 1rem; /* Add margin for button spacing */
+}
+
+.carousel--list {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
+    padding: 1rem 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+.carousel--list::-webkit-scrollbar {
+    display: none;
+}
+  
+.carousel--item {
+    display: inline-block;
+    text-align: center;
+    margin-right: 0.5rem;
+    transition: .2s;
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.carousel--item img {
+    width: 15rem;
+    height: 8.4rem; /* 16:9 aspect ratio */
+    border-radius: .2rem;
+    object-fit: cover;
+}
+
+.carousel--item:hover{
+    transform: scale(1.1); /* Reduced scale for better UX */
+    position: relative;
+    border-radius: .4rem;
+    z-index: 5;
+}
+
+/* Find More Button */
+.find-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.find-more-button {
+    background-color: var(--netflix-red);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.find-more-button:hover {
+    background-color: #c70810;
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: rgba(30, 30, 30, 0.95);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+    border: 1px solid rgba(229, 9, 20, 0.5);
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -15px;
+    margin-right: -10px;
+}
+
+.close:hover {
+    color: var(--netflix-red);
+}
+
+/* FOOTER */
+footer{
+    padding: 5rem 4rem 1rem; /* Updated padding to match main */
+    flex-direction: column;
+    background-color: var(--black-background);
+}
+
+.footer-copyright span{
+    color: var(--gray);
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+/* SOCIAL */
+.social--list{
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social--item i{
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+/* OPTIONS */
+.options--list{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.options--item a{
+    display: list-item;
+    margin-bottom: .9rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    color: var(--gray);
+    text-decoration: none;
+    width: 15rem;
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.options--item a:hover{
+    text-decoration: underline;
+}
+
+/* BUTTONS */
+.hero--button {
+    font-weight: 700;
+    border: none;
+    padding: 1.1rem 2.2rem;
+    border-radius: .3rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+}
+
+.hero--button i {
+    margin-right: .5rem;
+}
+
+.play {
+    background-color: var(--white);
+    color: var(--black-background);
+}
+
+.play:hover {
+    background-color: var(--white-btn-hover);
+}
+
+.info {
+    background-color: var(--gray-btn);
+    color: var(--white);
+}
+
+.info:hover {
+    background-color: var(--gray-btn-hover);
+}
+
+.carousel-button {
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 6;
+    padding: 2rem 1rem;
+    border-radius: .2rem;
+    background-color: var(--black-btn);
+    transition: all 0.1s;
+    border: none;
+    color: var(--white);
+    height: fit-content;
+    align-self: center;
+}
+
+.carousel-button b{
+    color: var(--white);
+    transition: all 0.1s;
+    opacity: .7;
+}
+
+.carousel-button b:hover{
+    transform: scale(1.25);
+    transform-origin: center;
+    opacity: 1;
+}
+
+.carousel-button:hover{
+    background-color: var(--black-btn-hover);
+}
+
+.service-code-button{
+    padding: .4rem .4rem;
+    background-color: transparent;
+    color: var(--gray);
+    border: solid .09rem var(--gray);
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+
+.service-code-button:hover{
+    color: var(--white);
+    cursor: pointer;
+}
