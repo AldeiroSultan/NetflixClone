@@ -35,6 +35,36 @@ if (toggleMuteButton && previewVideo) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Define different video sources for each memory type
+    const videoSources = {
+        'First Date': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        'Road Trip': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+        'Beach Day': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+        'Anniversary': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+        'Concert Night': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+        'Dinner Date': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+        'Holiday': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+        'Hiking Trip': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+        'City Exploration': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
+        'Theme Park': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+        'Beach Adventure': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4',
+        'Camping': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+        'Winter Getaway': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4',
+        'Birthday Party': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        'Holiday Celebration': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+        "Friend's Wedding": 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+        'Family Gathering': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+        'Concert': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+        "New Year's Eve": 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+        "Valentine's Day": 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+        'First Kiss': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+        'Proposal': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
+        'Moving In': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+        'First Trip': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4',
+        'Meeting Parents': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+        'Surprise Gift': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4'
+    };
+
     // Carousel functionality
     const carouselContainers = document.querySelectorAll('.category--carousel');
 
@@ -110,18 +140,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add click events to memory items
+    // Add click events to memory items with different video sources
     const memoryItems = document.querySelectorAll('.memory-item');
     memoryItems.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Get video source from data attribute
-            const videoSrc = this.getAttribute('data-video') || 'http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4';
-            
-            // Get title from alt text or create one
+            // Get title from the title div or alt text
+            const titleElement = this.querySelector('.item-title');
             const imgElement = this.querySelector('img');
-            const title = imgElement ? imgElement.getAttribute('alt') : 'Our Memory';
+            const title = titleElement ? titleElement.textContent : (imgElement ? imgElement.getAttribute('alt') : 'Our Memory');
+            
+            // Get video source from predefined sources or use data attribute
+            const videoSrc = videoSources[title] || this.getAttribute('data-video') || 'http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4';
             
             // Store the video source and title in localStorage
             localStorage.setItem('currentVideo', videoSrc);

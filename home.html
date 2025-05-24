@@ -11,6 +11,66 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css">
+    <style>
+        /* Additional CSS for hover overlay effects */
+        .carousel--item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .item-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0.2rem;
+        }
+        
+        .carousel--item:hover .item-hover-overlay {
+            opacity: 1;
+        }
+        
+        .play-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .play-button i {
+            color: white;
+            font-size: 24px;
+            margin-left: 3px; /* Adjust play icon position */
+        }
+        
+        .item-title {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            padding: 0 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="background">
@@ -38,12 +98,12 @@
                 <div class="preview-video-container">
                     <video class="preview-video" autoplay muted loop>
                         <!-- Placeholder video - replace with your own -->
-                        <source src="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4" type="video/mp4">
+                        <source src="videomain.mp4" type="video/mp4">
                     </video>
                     <div class="preview-overlay"></div>
                 </div>
-                <img class="hero--logo" src="https://github.com/debschaan/netflix-clone/blob/main/assets/img/poster%201.png?raw=true" alt="Our Love Story">
-                <p class="hero--description">A journey through our most cherished moments together. Relive the laughter, adventures, and beautiful memories we've created together.</p>
+                <img class="hero--logo" src="poster.png" alt="Our Love Story">
+                <p class="hero--description">A journey through our one year Long Distance Relationship Hundred Thousand Miles Apart. Happpy 1st Anniversary Samyang.</p>
                 <button class="hero--button play" id="watch-button"><i class="fa-solid fa-play"></i>Watch Now</button>
                 <button class="hero--button info"><i class="fa-solid fa-circle-info"></i>More Information</button>
                 <div class="video-controls">
@@ -63,95 +123,83 @@
                     <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
                     <div class="carousel__container">
                         <ul class="carousel--list">
-                            <!-- Updated placeholder images -->
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="First Date"></a>
+                            <!-- Updated with hover titles and play buttons -->
+                            <li class="carousel--item memory-item" data-video="image1.jpg">
+                                <a href="#">
+                                    <img src="image1.jpg" alt="First Date">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">First Date</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Road Trip"></a>
+                            <li class="carousel--item memory-item" data-video="image3.jpg">
+                                <a href="#">
+                                    <img src="image3.jpg" alt="Road Trip">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Our Salon Date!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Beach Day"></a>
+                            <li class="carousel--item memory-item" data-video="image6.jpg">
+                                <a href="#">
+                                    <img src="image6.jpg" alt="Beach Day">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">First Prayer Tgt!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Anniversary"></a>
+                            <li class="carousel--item memory-item" data-video="image4.png">
+                                <a href="#">
+                                    <img src="image4.png" alt="Anniversary">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Sultan's Bday!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Concert Night"></a>
+                            <li class="carousel--item memory-item" data-video="image29.jpg">
+                                <a href="#">
+                                    <img src="image29.jpg" alt="Concert Night">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">IceSkating Date!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Dinner Date"></a>
+                            <li class="carousel--item memory-item" data-video="image4.jpg">
+                                <a href="#">
+                                    <img src="image4.jpg" alt="Dinner Date">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title"> First Photobooth!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Holiday"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
-                </div>
-            </section>
-
-            <section class="section__category">
-                <h3 class="category--title"><a href="#">Our Adventures</a></h3>
-                <div class="category--carousel">
-                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
-                    <div class="carousel__container">
-                        <ul class="carousel--list">
-                            <!-- Updated placeholder images -->
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Hiking Trip"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="City Exploration"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Road Trip"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Theme Park"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Beach Adventure"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Camping"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Winter Getaway"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
-                </div>
-            </section>
-
-            <section class="section__category">
-                <h3 class="category--title"><a href="#">Special Events</a></h3>
-                <div class="category--carousel">
-                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
-                    <div class="carousel__container">
-                        <ul class="carousel--list">
-                            <!-- Updated placeholder images -->
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Birthday Party"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Holiday Celebration"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Friend's Wedding"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Family Gathering"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Concert"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="New Year's Eve"></a>
-                            </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Valentine's Day"></a>
+                            <li class="carousel--item memory-item" data-video="image7.jpg">
+                                <a href="#">
+                                    <img src="image7.jpg" alt="Holiday">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Book you gave me!</div>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -160,32 +208,268 @@
             </section>
 
             <section class="section__category">
-                <h3 class="category--title"><a href="#">Memorable Moments</a></h3>
+                <h3 class="category--title"><a href="#">Start of our LDR</a></h3>
                 <div class="category--carousel">
                     <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
                     <div class="carousel__container">
                         <ul class="carousel--list">
-                            <!-- Updated placeholder images -->
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="First Kiss"></a>
+                            <!-- Updated with hover titles and play buttons -->
+                            <li class="carousel--item memory-item" data-video="image5.jpg.png">
+                                <a href="#">
+                                    <img src="image5.jpg.png" alt="Hiking Trip">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">First VidCall</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Proposal"></a>
+                            <li class="carousel--item memory-item" data-video="image5.jpg">
+                                <a href="#">
+                                    <img src="image5.jpg" alt="City Exploration">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Your Birthday!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Moving In"></a>
+                            <li class="carousel--item memory-item" data-video="image10.jpg">
+                                <a href="#">
+                                    <img src="image10.jpg" alt="Road Trip">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Bibi!!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="First Trip"></a>
+                            <li class="carousel--item memory-item" data-video="image8.jpg">
+                                <a href="#">
+                                    <img src="image8.jpg" alt="Theme Park">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Pochaccoo!!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Meeting Parents"></a>
+                            <li class="carousel--item memory-item" data-video="image11.png">
+                                <a href="#">
+                                    <img src="image11.png" alt="Beach Adventure">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">SD Reunion!</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Anniversary"></a>
+                            <li class="carousel--item memory-item" data-video="image12.jpg">
+                                <a href="#">
+                                    <img src="image12.jpg" alt="Camping">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Your Old Pics</div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="carousel--item memory-item" data-video="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4">
-                                <a href="#"><img src="https://dinsos.palembang.go.id/assets/img/no-image.png" alt="Surprise Gift"></a>
+                            <li class="carousel--item memory-item" data-video="image32.png">
+                                <a href="#">
+                                    <img src="image32.png" alt="Winter Getaway">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">The yellow dress</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
+                </div>
+            </section>
+
+            <section class="section__category">
+                <h3 class="category--title"><a href="#">New Year!</a></h3>
+                <div class="category--carousel">
+                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
+                    <div class="carousel__container">
+                        <ul class="carousel--list">
+                            <!-- Updated with hover titles and play buttons -->
+                            <li class="carousel--item memory-item" data-video="image13.jpg">
+                                <a href="#">
+                                    <img src="image13.jpg" alt="Birthday Party">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Painting Date</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image14.jpg">
+                                <a href="#">
+                                    <img src="image14.jpg" alt="Holiday Celebration">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Hehe</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image15.jpg">
+                                <a href="#">
+                                    <img src="image15.jpg" alt="Friend's Wedding">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Pizza Date!</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image17.jpg">
+                                <a href="#">
+                                    <img src="image17.jpg" alt="Family Gathering">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Late Birthday</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image22.png">
+                                <a href="#">
+                                    <img src="image22.png" alt="Concert">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Paint!</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image33.jpg">
+                                <a href="#">
+                                    <img src="image33.jpg" alt="New Year's Eve">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">New Year's Eve</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image9.jpg">
+                                <a href="#">
+                                    <img src="image9.jpg" alt="Valentine's Day">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Farm</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="carousel-button next" role="button" aria-label="See more titles"><b class="fa-solid fa-chevron-right"></b></span>
+                </div>
+            </section>
+
+            <section class="section__category">
+                <h3 class="category--title"><a href="#">Back in Oz!</a></h3>
+                <div class="category--carousel">
+                    <span class="carousel-button prev" role="button" aria-label="See previous titles"><b class="fa-solid fa-chevron-left"></b></span>
+                    <div class="carousel__container">
+                        <ul class="carousel--list">
+                            <!-- Updated with hover titles and play buttons -->
+                            <li class="carousel--item memory-item" data-video="image21.jpg">
+                                <a href="#">
+                                    <img src="image21.jpg" alt="First Kiss">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Sydney Airport!</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image16.jpg">
+                                <a href="#">
+                                    <img src="image16.jpg" alt="Proposal">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Valentines day</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image36.png">
+                                <a href="#">
+                                    <img src="image36.png" alt="Moving In">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">On her way to oz!</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image26.jpg">
+                                <a href="#">
+                                    <img src="image26.jpg" alt="First Trip">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">First Drive</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image23.jpg">
+                                <a href="#">
+                                    <img src="image23.jpg" alt="Meeting Parents">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Yoga Date</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image38.jpg">
+                                <a href="#">
+                                    <img src="image38.jpg" alt="Anniversary">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Her Matcha Set!</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="carousel--item memory-item" data-video="image28.jpg">
+                                <a href="#">
+                                    <img src="image28.jpg" alt="Surprise Gift">
+                                    <div class="item-hover-overlay">
+                                        <div class="play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="item-title">Steak!</div>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -225,7 +509,7 @@
                 </ul>
             </div>
             <button class="service-code-button">Love Code</button>
-            <div class="footer-copyright"><span>© 2024 Our Love Story</span></div>
+            <div class="footer-copyright"><span>© 2025 Our Love Story</span></div>
         </footer>
     </div>
     
